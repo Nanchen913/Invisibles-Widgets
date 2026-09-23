@@ -24,4 +24,8 @@ APK 输出到 `app/build/outputs/apk/debug/app-debug.apk`。Release 构建启用
 ./gradlew assembleRelease
 ```
 
+## 下载
+
+从 [GitHub Releases](https://github.com/Nanchen913/Invisibles-Widgets/releases/latest) 下载最新版本附带的 APK，下载后在 Android 手机上打开并按提示安装。每次推送到 `main` 也会在 GitHub Actions 中生成可下载 90 天的 APK 构建产物。
+
 本项目不请求网络、存储、通知或其他运行时权限；不包含后台服务、分析或广告。小组件不设置周期刷新，由桌面启动器托管。
