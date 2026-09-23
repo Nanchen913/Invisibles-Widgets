@@ -3,6 +3,7 @@ package com.invisibles.widgets
 import android.app.Activity
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -12,9 +13,10 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
-import android.widget.Toast
 
 class MainActivity : Activity() {
+    private lateinit var pinStatus: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,6 +53,20 @@ class MainActivity : Activity() {
                 setOnClickListener { requestWidgetPin() }
             },
             spacedHeight(dp(24)),
+        )
+
+        pinStatus = instruction(getString(R.string.pin_hint))
+        page.addView(pinStatus, spacedHeight(dp(8)))
+
+        page.addView(
+            Button(this).apply {
+                text = getString(R.string.open_home)
+                isAllCaps = false
+                setOnClickListener {
+                    startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME))
+                }
+            },
+            spacedHeight(dp(8)),
         )
 
         page.addView(sectionTitle(getString(R.string.steps_title)), spacedHeight(dp(28)))
@@ -92,12 +108,13 @@ class MainActivity : Activity() {
     private fun requestWidgetPin() {
         val manager = AppWidgetManager.getInstance(this)
         val provider = ComponentName(this, TransparentWidgetProvider::class.java)
-        val requested = manager.isRequestPinAppWidgetSupported &&
-            manager.requestPinAppWidget(provider, null, null)
-
-        if (!requested) {
-            Toast.makeText(this, R.string.pin_not_supported, Toast.LENGTH_LONG).show()
+        val requested = try {
+            manager.isRequestPinAppWidgetSupported &&
+                manager.requestPinAppWidget(provider, null, null)
+        } catch (_: IllegalStateException) {
+            false
         }
+        pinStatus.setText(if (requested) R.string.pin_request_sent else R.string.pin_not_supported)
     }
 
     private fun sectionTitle(text: String) = TextView(this).apply {

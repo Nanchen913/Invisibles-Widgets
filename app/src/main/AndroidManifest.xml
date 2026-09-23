@@ -19,18 +19,13 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".WallpaperActivity"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:theme="@style/WallpaperActivityTheme" />
-
         <receiver
             android:name=".TransparentWidgetProvider"
             android:exported="true"
             android:label="@string/widget_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"

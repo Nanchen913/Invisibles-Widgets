@@ -7,13 +7,16 @@
     <string name="welcome_title">留白给壁纸</string>
     <string name="welcome_body">用一个完全透明的小组件占住桌面网格，让壁纸完整露出来。小组件由桌面启动器托管，本应用不会在后台持续运行。</string>
     <string name="add_widget">添加透明小组件</string>
+    <string name="open_home">返回桌面添加</string>
+    <string name="pin_hint">点击按钮后，是否能直接添加取决于当前桌面。若没有弹出确认页，可返回桌面长按空白处，从“小组件”列表添加。</string>
+    <string name="pin_request_sent">已向桌面发送添加请求。如果没有弹出确认页，请返回桌面长按空白处，从“小组件”列表添加。</string>
     <string name="steps_title">设置步骤</string>
     <string name="step_one">1. 点击“添加透明小组件”，或在桌面空白处长按并打开“小组件”。</string>
     <string name="step_two">2. 找到“透明占位”，长按并拖到要留空的桌面页。</string>
     <string name="step_three">3. 长按小组件，拖动边缘扩展到需要的大小；不同桌面的可调整范围会不同。</string>
     <string name="step_four">4. 如果页面上已有图标，把它们移走或移到其他桌面页。</string>
-    <string name="step_five">5. 点击透明组件后仍停留在桌面，可继续左右滑动或打开图标；状态栏会隐藏，系统导航操作保留。边缘手势可能暂时显示系统栏。Dock 由桌面启动器控制；若想隐藏，请在启动器设置中查找相关选项（部分启动器不支持）。</string>
+    <string name="step_five">5. 透明组件不会打开应用或拦截桌面手势。状态栏和 Dock 由当前桌面启动器控制；如需隐藏，请在启动器设置中查找相关选项（部分启动器不支持）。</string>
     <string name="home_page_title">回到这张壁纸页</string>
     <string name="home_page_body">在桌面设置中查找“默认主屏幕”或类似选项，把空白页设为主屏。这个选项由你正在使用的桌面启动器提供；有些桌面不支持更改主屏页。</string>
-    <string name="pin_not_supported">此桌面不支持快捷添加，请长按桌面并从“小组件”列表手动添加。</string>
+    <string name="pin_not_supported">当前桌面没有接受快捷添加请求。请点“返回桌面添加”，长按空白处并从“小组件”列表添加。</string>
 </resources>
