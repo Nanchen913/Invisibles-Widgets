@@ -58,6 +58,7 @@ class MainActivity : Activity() {
         page.addView(instruction(getString(R.string.step_two)), spacedHeight(dp(10)))
         page.addView(instruction(getString(R.string.step_three)), spacedHeight(dp(10)))
         page.addView(instruction(getString(R.string.step_four)), spacedHeight(dp(10)))
+        page.addView(instruction(getString(R.string.step_five)), spacedHeight(dp(10)))
 
         page.addView(sectionTitle(getString(R.string.home_page_title)), spacedHeight(dp(28)))
         page.addView(

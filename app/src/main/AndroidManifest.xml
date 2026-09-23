@@ -19,6 +19,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".WallpaperActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@style/WallpaperActivityTheme" />
+
         <receiver
             android:name=".TransparentWidgetProvider"
             android:exported="true"
